@@ -21,4 +21,7 @@ Route::prefix('/php-basic-one')->name('home.one.')->group(function () {
 
     Route::get('/find-lowercase', 'OneController@findLower')->name('find-lower');
     Route::post('/find-lowercase', 'OneController@findLowerPost')->name('find-lower');
+
+    Route::get('/word', 'OneController@word')->name('word');
+    Route::post('/word', 'OneController@wordPost')->name('word');
 });

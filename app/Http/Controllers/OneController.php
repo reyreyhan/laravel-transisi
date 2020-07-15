@@ -44,6 +44,48 @@ class OneController extends Controller
 
     public function findLowerPost(Request $request) {
         $lowerCount = strlen(preg_replace('![^a-z]+!', '', $request->word));
-        echo '" ' . $request->word . '"' . 'mengandung ' . $lowerCount . ' buah huruf kecil.';
+        echo '"' . $request->word . '"' . ' mengandung ' . $lowerCount . ' buah huruf kecil.';
+    }
+
+    public function word() {
+        return view('one.word');
+    }
+
+    public function wordPost(Request $request) {
+        $word = explode(" ", $request->word);
+
+        echo "Unigram<br>";
+        $unigramString = "";
+        for ($i = 0; $i < count($word); $i++) {
+            $unigramString = $unigramString . $word[$i] . ", ";
+        }
+        echo $unigramString;
+
+        echo "<br><br>Bigram<br>";
+        $bigramString = "";
+        for ($i = 0; $i < count($word); $i++) {
+            if ($i+1 < count($word)) {
+                $bigramString = $bigramString . $word[$i] . " " . $word[$i+1] . ", ";
+            } else {
+                $bigramString = $bigramString . $word[$i] . ", ";
+            }
+            $i = $i+1;
+        }
+        echo $bigramString;
+
+        echo "<br><br>Trigram<br>";
+        $trigramString = "";
+        for ($i = 0; $i < count($word); $i++) {
+            if ($i+2 < count($word)) {
+                $trigramString = $trigramString . $word[$i] . " " . $word[$i+1] . " " . $word[$i+2] . ", ";
+            } else if ($i+1 < count($word)) {
+                $trigramString = $trigramString . $word[$i] . " " . $word[$i+1] . ", ";
+            } else {
+                $trigramString = $trigramString . $word[$i] . ", ";
+            }
+            $i = $i+2;
+        }
+        echo $trigramString;
+
     }
 }

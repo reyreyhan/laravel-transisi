@@ -26,6 +26,17 @@
                 </div>
             </div>
 
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-header">Word</div>
+                    <div class="card-body">
+                        <a href="{{ route('home.one.word') }}" class="btn btn-primary">
+                            Go To
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 @endsection
