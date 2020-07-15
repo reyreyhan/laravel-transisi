@@ -36,3 +36,7 @@ Route::prefix('/php-basic-three')->name('home.three.')->group(function () {
     Route::get('/true-false', 'ThreeController@trueFalse')->name('true-false');
     Route::post('/true-false', 'ThreeController@trueFalsePost')->name('true-false');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
