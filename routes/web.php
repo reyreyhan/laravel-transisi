@@ -31,3 +31,8 @@ Route::prefix('/php-basic-two')->name('home.two.')->group(function () {
     Route::get('/encrypt', 'TwoController@encrypt')->name('encrypt');
     Route::post('/encrypt', 'TwoController@encryptPost')->name('encrypt');
 });
+
+Route::prefix('/php-basic-three')->name('home.three.')->group(function () {
+    Route::get('/true-false', 'ThreeController@trueFalse')->name('true-false');
+    Route::post('/true-false', 'ThreeController@trueFalsePost')->name('true-false');
+});

@@ -29,7 +29,7 @@
                 <div class="card text-center">
                     <div class="card-header">PHP Dasar 3</div>
                     <div class="card-body">
-                        <a href="#" class="btn btn-primary">
+                        <a href="{{ route('home.three.true-false') }}" class="btn btn-primary">
                             Go To
                         </a>
                     </div>
