@@ -13,4 +13,8 @@ class HomeController extends Controller
     public function one() {
         return view('php-basic-one');
     }
+
+    public function two() {
+        return view('php-basic-two');
+    }
 }

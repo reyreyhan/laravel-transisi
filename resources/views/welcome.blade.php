@@ -18,7 +18,7 @@
                 <div class="card text-center">
                     <div class="card-header">PHP Dasar 2</div>
                     <div class="card-body">
-                        <a href="#" class="btn btn-primary">
+                        <a href="{{ route('home.two') }}" class="btn btn-primary">
                             Go To
                         </a>
                     </div>
