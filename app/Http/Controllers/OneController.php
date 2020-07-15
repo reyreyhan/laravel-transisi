@@ -27,7 +27,6 @@ class OneController extends Controller
             for ($i = 0; $i < 7; $i++) {
                 $highestScore[$i] = $tempValue[$i];
             }
-
             echo "7 Highest Scores is " . join(" ", $highestScore);
         } else if ($request->feature == 3) {
             sort($tempValue);
@@ -35,8 +34,16 @@ class OneController extends Controller
             for ($i = 0; $i < 7; $i++) {
                 $lowestScore[$i] = $tempValue[$i];
             }
-
             echo "7 Lowest Scores is " . join(" ", $lowestScore);
         }
+    }
+
+    public function findLower() {
+        return view('one.find-lower');
+    }
+
+    public function findLowerPost(Request $request) {
+        $lowerCount = strlen(preg_replace('![^a-z]+!', '', $request->word));
+        echo '" ' . $request->word . '"' . 'mengandung ' . $lowerCount . ' buah huruf kecil.';
     }
 }
