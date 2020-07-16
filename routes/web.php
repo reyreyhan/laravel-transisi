@@ -49,3 +49,11 @@ Route::prefix('/company')->name('company.')->middleware('auth')->group(function 
     Route::post('/{id}', 'CompanyController@update')->name('update');
     Route::delete('/{id}', 'CompanyController@destroy')->name('delete');
 });
+
+Route::prefix('/employee')->name('employee.')->middleware('auth')->group(function () {
+    Route::get('', 'EmployeeController@index')->name('index');
+    Route::post('', 'EmployeeController@store')->name('store');
+    Route::get('/{id}', 'EmployeeController@edit')->name('edit');
+    Route::post('/{id}', 'EmployeeController@update')->name('update');
+    Route::delete('/{id}', 'EmployeeController@destroy')->name('delete');
+});

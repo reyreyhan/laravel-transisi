@@ -19,7 +19,7 @@
                 <div class="card text-center">
                     <div class="card-header">Employee</div>
                     <div class="card-body">
-                        <a href="" class="btn btn-primary">
+                        <a href="{{ route('employee.index') }}" class="btn btn-primary">
                             Go To
                         </a>
                     </div>
