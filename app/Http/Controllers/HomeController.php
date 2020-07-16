@@ -37,4 +37,8 @@ class HomeController extends Controller
     public function two() {
         return view('php-basic-two');
     }
+
+    public function laravelBasic() {
+        return view('laravel-basic');
+    }
 }

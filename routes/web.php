@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@home')->name('home');
 
 Route::get('/php-basic-one', 'HomeController@one')->name('home.one');
 Route::get('/php-basic-two', 'HomeController@two')->name('home.two');
+Route::get('/laravel-basic', 'HomeController@laravelBasic')->name('home.laravel-basic');
 
 Route::prefix('/php-basic-one')->name('home.one.')->group(function () {
     Route::get('/test-scores', 'OneController@testScores')->name('test-score');
@@ -40,3 +41,11 @@ Route::prefix('/php-basic-three')->name('home.three.')->group(function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('/company')->name('company.')->middleware('auth')->group(function () {
+    Route::get('', 'CompanyController@index')->name('index');
+    Route::post('', 'CompanyController@store')->name('store');
+    Route::get('/{id}', 'CompanyController@edit')->name('edit');
+    Route::post('/{id}', 'CompanyController@update')->name('update');
+    Route::delete('/{id}', 'CompanyController@destroy')->name('delete');
+});
